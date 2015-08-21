@@ -16,7 +16,7 @@ Copy-Item '\\SKSNA01\Software\Standalone\Ship Station\GetScale.exe' -destination
 <# This creates a string in the registry where GetScale.exe executes on startup #>
 New-Itemproperty -path HKLM:\software\Microsoft\Windows\CurrentVersion\run -name "GetScale" -type "string" -value C:\GetScale.exe |
 <# This installs Connect Ship on the computer#>
-& '\\SKSNA01\Software\Standalone\Ship Station\ConnectShipToolkitClientSetup-6.5.exe' -s|
+& '\\SKSNA01\Software\Standalone\Ship Station\ConnectShipToolkitClientSetup-6.5.exe' |
 <# This installs Core-C on the computer#>
 & '\\SKSNA01\Software\Standalone\Ship Station\UpdateInstaller-6.5-Core-C.exe' |
 <# This installs Library on the computer#>
@@ -26,7 +26,7 @@ New-Itemproperty -path HKLM:\software\Microsoft\Windows\CurrentVersion\run -name
 Start-Sleep -s 0;
 <# The next two lines produces an output box #> 
 $wshell1 = New-Object -ComObject Wscript.Shell
-$wshell1.Popup("You must Restart the Computer for GetScale to work!",0,"Done");
+$wshell1.Popup("To complete the installation of GetScale.exe, your computer must be restarted",0,"Done");
 
 <# Error Handling:
 
