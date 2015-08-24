@@ -14,14 +14,14 @@ Author:    Justin Neubauer
 
 <# This tests the path #>
 if (
-  test-path "\\sksna01\software\standalone\shipstation\" )
+  test-path "\\sksna01\software\standalone\ship station\" )
 
 
-<# This will run if the path is correct #>
+<# This will run a second powershell script if the path is correct #>
 { \\sksna01\software\standalone\powershellscripts\shipstation.ps1}
 
 <# this will run if the path is incorrect #>
 else {
-$wshell = New-Object -ComObject Wscript.Shell
-$wshell.Popup("You did not enter the path correctly",0,"Done")}
+$wshell = New-Object -ComObject Wscript.Shell -ErrorAction Stop
+$wshell.Popup("You did not enter the path correctly",0,"Done", 48)}
 

@@ -25,8 +25,8 @@ New-Itemproperty -path HKLM:\software\Microsoft\Windows\CurrentVersion\run -name
 <# Waits 20 Seconds after initializing the installer for the library before executing the next command #>
 Start-Sleep -s 0;
 <# The next two lines produces an output box #> 
-$wshell1 = New-Object -ComObject Wscript.Shell
-$wshell1.Popup("To complete the installation of GetScale.exe, your computer must be restarted",0,"Done");
+$wshell1 = New-Object -ComObject Wscript.Shell 
+$wshell1.Popup("To complete the installation of GetScale.exe, your computer must be restarted",0,"Done", 64);
 
 <# Error Handling:
 
