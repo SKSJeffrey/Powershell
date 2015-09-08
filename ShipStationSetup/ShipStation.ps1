@@ -40,7 +40,7 @@ $wshell1.Popup("To complete the installation of GetScale.exe, your computer must
 <# this will run if the path is incorrect #>
 else {
 $wshell = New-Object -ComObject Wscript.Shell -ErrorAction Stop
-$wshell.Popup("You did not enter the path correctly",0,"Done", 48)}
+$wshell.Popup("The file path is incorrect",0,"Done", 48)}
 
 
 
